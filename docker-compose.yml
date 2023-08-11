@@ -1,0 +1,22 @@
+version: '3'
+services:
+  db:
+    image: mysql:8.0
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: root_password
+      MYSQL_DATABASE: lamp_db
+      MYSQL_USER: lamp_user
+      MYSQL_PASSWORD: lamp_password
+
+  apache:
+    build:
+      context: ./apache
+      dockerfile: Dockerfile
+    ports:
+      - "80:80"
+    volumes:
+      - ./www:/var/www/html
+    depends_on:
+      - db
