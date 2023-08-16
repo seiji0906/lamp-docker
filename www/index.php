@@ -6,9 +6,9 @@ $db = 'lamp_db';
 
 $conn = new mysqli($host, $user, $pass, $db);
 
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
+//if ($conn->connect_error) {
+//    die("Connection failed: " . $conn->connect_error);
+//}
 
 $sql = "CREATE TABLE IF NOT EXISTS users (
     id INT AUTO_INCREMENT PRIMARY KEY,

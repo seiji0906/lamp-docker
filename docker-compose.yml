@@ -8,6 +8,12 @@ services:
       - "80:80"
     volumes:
       - ./www:/var/www/html
+<<<<<<< HEAD
+=======
+    depends_on:
+      - db
+
+>>>>>>> test
 
   db:
     image: mysql:8.0
